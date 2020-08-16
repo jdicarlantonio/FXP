@@ -11,7 +11,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 
 import Effects from './components/Effects';
-import Bluetooth from './components/Bluetooth';
+import Communicator from './components/Communication';
 
 //const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -21,7 +21,7 @@ const MainStack = () => {
     <NavigationContainer>
     <Drawer.Navigator>
       <Drawer.Screen name="Effects" component={Effects} />
-      <Drawer.Screen name="Bluetooth" component={Bluetooth} />
+      <Drawer.Screen name="Enable Wifi" component={Communicator} />
     </Drawer.Navigator>
   </NavigationContainer>
   );
