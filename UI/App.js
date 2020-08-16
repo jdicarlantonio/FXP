@@ -7,16 +7,30 @@
  */
 
 import React from 'react';
-import { Text, ScrollView } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createDrawerNavigator } from '@react-navigation/drawer';
 
-import EqualizerUI from './components/EqualizerUI';
+import Effects from './components/Effects';
+import Bluetooth from './components/Bluetooth';
+
+//const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
+
+const MainStack = () => {
+  return(
+    <NavigationContainer>
+    <Drawer.Navigator>
+      <Drawer.Screen name="Effects" component={Effects} />
+      <Drawer.Screen name="Bluetooth" component={Bluetooth} />
+    </Drawer.Navigator>
+  </NavigationContainer>
+  );
+}
 
 class App extends React.Component {
   render() {
     return (
-      <ScrollView>
-        <EqualizerUI />
-      </ScrollView>
+      <MainStack />
     );    
   }
 }
